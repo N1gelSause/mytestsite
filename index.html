@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS.org Test Page</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #box {
+      width: 150px;
+      height: 150px;
+      background: tomato;
+      margin: 20px auto;
+      line-height: 150px;
+      color: white;
+      font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <h1>JS.org Test Page</h1>
+  <p>Click the box to see JavaScript in action:</p>
+
+  <div id="box">Click me</div>
+
+  <script>
+    // Find the box
+    const box = document.getElementById("box");
+
+    // On click, change its color and rotate it randomly
+    box.addEventListener("click", () => {
+      const colors = ["tomato", "dodgerblue", "seagreen", "goldenrod", "purple"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      const randomAngle = Math.floor(Math.random() * 360);
+
+      box.style.background = randomColor;
+      box.style.transform = `rotate(${randomAngle}deg)`;
+      box.textContent = randomColor;
+    });
+  </script>
+</body>
+</html>
